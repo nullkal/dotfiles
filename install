@@ -1,0 +1,32 @@
+#!/usr/bin/env zsh
+
+SRC_DIR=$(cd $(dirname $0) && pwd -P)/skel
+DST_DIR=$HOME
+
+DOTFILE_PREFIX=dot
+
+for file in $SRC_DIR/$DOTFILE_PREFIX.*; do
+    file_name=$(basename $file)
+    file_name=${file_name#$DOTFILE_PREFIX}
+
+    ln -nsf $SRC_DIR/$DOTFILE_PREFIX$file_name $DST_DIR/$file_name
+    echo "LINKED: $file_name"
+done
+
+if [ ! -e ~/.vimbackup ]; then
+    mkdir -f ~/.vimbackup
+    echo "CREATED: .vimbackup"
+fi
+
+if [ ! -e ~/.eskk/ ]; then
+    mkdir ~/.eskk
+    echo "CREATED: .eskk"
+fi
+
+if [ ! -e ~/.eskk/SKK-JISYO.L ]; then
+    wget http://openlab.jp/skk/dic/SKK-JISYO.L.gz -O ~/.eskk/SKK-JISYO.L.gz
+    gzip -d ~/.eskk/SKK-JISYO.L.gz
+    echo "DOWNLOADED: .eskk/SKK-JISYO.L"
+fi
+
+git config --global core.excludesfile ~/.gitignore

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh -p8122 nullkal@lyra.nullkal.jp

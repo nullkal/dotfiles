@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh -p8122 root@twilight.nullkal.jp
