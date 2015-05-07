@@ -11,4 +11,4 @@ A cross-platform dotfiles currently compatible with:
 
 ## Installation
 
-    git clone --recursive git@github.com:nullkal/dotfiles.git && ./dotfiles/install.zsh
+    git clone --recursive https://github.com/nullkal/dotfiles.git && ./dotfiles/install
