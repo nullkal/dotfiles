@@ -14,7 +14,7 @@ for file in $SRC_DIR/$DOTFILE_PREFIX.*; do
 done
 
 if [ ! -e ~/.vimbackup ]; then
-    mkdir -f ~/.vimbackup
+    mkdir ~/.vimbackup
     echo "CREATED: .vimbackup"
 fi
 
