@@ -9,3 +9,5 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-bundler'
+
+NeoBundle 'slim-template/vim-slim'
