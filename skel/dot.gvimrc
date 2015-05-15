@@ -1,1 +1,1 @@
-runtime! gvimrc.d/*.vim
+runtime! gvimrc.d/**/*.vim

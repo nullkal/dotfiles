@@ -1,4 +1,4 @@
-for file in $DOTFILES_DIR/zsh/zshrc.d/*.zsh(N); do
+for file in $DOTFILES_DIR/zsh/zshrc.d/**/*.zsh(N); do
     source $file
 done
 

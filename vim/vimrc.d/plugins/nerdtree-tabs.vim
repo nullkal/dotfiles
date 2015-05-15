@@ -1,0 +1,1 @@
+let g:nerdtree_tabs_smart_startup_focus=2

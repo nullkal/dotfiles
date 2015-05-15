@@ -15,6 +15,6 @@ exec 'source ' . g:dotfiles_runtime_dir . '/bundle-plugins.vim'
 call neobundle#end()
 
 filetype plugin indent on
-runtime! vimrc.d/*.vim
+runtime! vimrc.d/**/*.vim
 
 NeoBundleCheck

@@ -14,7 +14,7 @@ function readlink_f {
 }
 
 export DOTFILES_DIR=$(dirname $(readlink_f ~/.zshenv))/..
-for file in $DOTFILES_DIR/zsh/zshenv.d/*.zsh(N); do
+for file in $DOTFILES_DIR/zsh/zshenv.d/**/*.zsh(N); do
     source $file
 done
 
