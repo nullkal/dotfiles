@@ -2,6 +2,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 
 NeoBundle 'Shougo/vimproc.vim'
 
+NeoBundle 'itchyny/lightline.vim'
+
 NeoBundle 'tyru/eskk.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -9,7 +11,9 @@ NeoBundle 'tomtom/tcomment_vim'
 
 NeoBundle 'noahfrederick/vim-skeleton'
 NeoBundle 'airblade/vim-rooter'
+
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
