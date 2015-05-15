@@ -3,7 +3,7 @@ let g:lightline = {
 \ 'active': {
 \   'left': [
 \     [ 'mode', 'paste' ],
-\     [ 'fugitive', 'readonly', 'filename', 'modified' ]
+\     [ 'fugitive', 'readonly', 'filename' ]
 \   ],
 \   'right': [
 \     [ 'lineinfo', 'syntastic' ],
@@ -32,11 +32,11 @@ let g:lightline = {
 \}
 
 function! MyModified()
-  return &ft =~ 'help\|nerdtree\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help\|tagbar\|nerdtree\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|nerdtree\|gundo' && &readonly ? 'RO' : ''
+  return &ft !~? 'help\|tagbar\|nerdtree\|gundo' && &readonly ? 'RO' : ''
 endfunction
 
 function! MyFilename()
@@ -44,12 +44,13 @@ function! MyFilename()
 \   (
 \     &ft == 'unite' ? unite#get_status_string() : 
 \     &ft == 'nerdtree' ? '' :
+\     &ft == 'tagbar' ? '' :
 \     '' != expand('%:t') ? expand('%:t') : '[No Name]'
 \   ) . ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
 
 function! MyFugitive()
-  if &ft !~? 'nerdtree\|gundo' && exists("*fugitive#head")
+  if &ft !~? 'tagbar\|nerdtree\|gundo' && exists("*fugitive#head")
     return fugitive#head()
   endif
   return ''
