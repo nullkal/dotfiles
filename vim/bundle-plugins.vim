@@ -31,7 +31,9 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 
 NeoBundle 'joonty/vdebug'
+NeoBundle 'thinca/vim-quickrun'
 
+NeoBundle 'grep.vim'
 NeoBundle 'alpaca-tc/alpaca_tags'
 NeoBundle 'majutsushi/tagbar'
 
