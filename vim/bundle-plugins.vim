@@ -42,6 +42,9 @@ NeoBundle 'Lokaltog/vim-easymotion'
 " Docs
 NeoBundle 'tpope/vim-markdown'
 
+NeoBundle 'sukima/xmledit'
+NeoBundle 'xslt'
+
 
 " Configs
 NeoBundle 'nginx.vim'
