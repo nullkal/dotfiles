@@ -11,6 +11,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'sudo.vim'
+NeoBundle 'Shougo/vimshell.vim'
 
 NeoBundle 'noahfrederick/vim-skeleton'
 NeoBundle 'airblade/vim-rooter'
