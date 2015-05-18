@@ -60,6 +60,15 @@ NeoBundle 'xslt'
 NeoBundle 'nginx.vim'
 
 
+" C/C++
+NeoBundle 'jalcine/cmake.vim'
+
+
+" Golang
+NeoBundle 'fatih/vim-go'
+NeoBundle 'vim-jp/vim-go-extra'
+
+
 " Web
 NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
