@@ -1,6 +1,13 @@
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\   'windows' : 'make -f make_mingw32.mak',
+\   'cygwin' : 'make -f make_cygwin.mak',
+\   'mac' : 'make -f make_mac.mak',
+\   'unix' : 'make -f make_unix.mak'
+\ }
+\}
 
 NeoBundle 'itchyny/lightline.vim'
 
