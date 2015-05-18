@@ -41,6 +41,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 
 " Docs
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'xslt'
 
 
 " Configs
