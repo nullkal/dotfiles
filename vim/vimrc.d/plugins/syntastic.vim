@@ -7,3 +7,7 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
+
+let g:syntastic_sass_checkers=['']
+let g:syntastic_scss_checkers=['']
+let g:syntastic_html_checkers=['']
