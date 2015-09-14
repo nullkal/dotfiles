@@ -76,6 +76,7 @@ NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'leafgarland/typescript-vim'
 
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/emmet-vim'
