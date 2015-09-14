@@ -83,6 +83,7 @@ NeoBundle 'mattn/emmet-vim'
 
 " Node.js
 NeoBundle 'moll/vim-node'
+NeoBundle 'wavded/vim-stylus'
 
 
 " Ruby
