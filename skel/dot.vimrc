@@ -11,7 +11,15 @@ endif
 filetype off
 
 call neobundle#begin(g:dotfiles_runtime_dir . '/bundle')
-exec 'source ' . g:dotfiles_runtime_dir . '/bundle-plugins.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+let s:plugin_list = g:dotfiles_runtime_dir . '/bundle-plugins.vim'
+if neobundle#load_cache(s:plugin_list)
+  exec 'source ' . s:plugin_list
+
+  NeoBundleSaveCache
+endif
+
 call neobundle#end()
 
 filetype plugin indent on
