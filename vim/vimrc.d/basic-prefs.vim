@@ -35,13 +35,6 @@ set backupdir=$HOME/.vimbackup
 set directory=$HOME/.vimbackup
 
 
-set ignorecase
-set smartcase
-
-set incsearch
-set hlsearch
-
-
 set autoindent
 set smartindent
 
@@ -49,6 +42,7 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
 
 set formatoptions+=mM
 set formatoptions-=ro
