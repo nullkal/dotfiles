@@ -1,4 +1,4 @@
-colorscheme solarized
+colorscheme hybrid
 
 if has('win32')
   set guifont=Ricty_Diminished:h14:cSHIFTJIS

@@ -1,4 +1,4 @@
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
