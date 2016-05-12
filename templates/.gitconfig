@@ -1,0 +1,4 @@
+# BEGIN DOTFILES TEMPLATE CODE
+[include]
+	path = %DOTFILES_ROOT%/git/gitconfig
+# END DOTFILES TEMPLATE CODE

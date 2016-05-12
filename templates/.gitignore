@@ -1,0 +1,5 @@
+#### BEGIN DOTFILES TEMPLATE CODE
+.DS_Store
+Thumbs.db
+.vimrc.local
+#### END DOTFILES TEMPLATE CODE

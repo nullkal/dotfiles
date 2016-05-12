@@ -1,0 +1,18 @@
+#!/bin/sh
+
+printf 'checking the path of dotfiles... '
+
+escape_regexp() {
+	sed -E 's/(\/|\\|\.|\?|\*|\+|\^|\$|\[|\])/\\\1/g'
+}
+
+escaped_home=`echo $HOME | sed -e 's/\/$//' | escape_regexp`
+
+basedir=`dirname $0`
+DOTFILES_ROOT=`cd $basedir/../../ && pwd -P | sed -e "s/$escaped_home/~/"`
+
+cat <<EOT >> ~/.dotfiles.conf
+DOTFILES_ROOT=$DOTFILES_ROOT
+EOT
+
+printf '%s\n' $DOTFILES_ROOT

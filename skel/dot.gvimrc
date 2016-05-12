@@ -1,1 +1,0 @@
-runtime! gvimrc.d/**/*.vim

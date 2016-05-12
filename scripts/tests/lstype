@@ -1,0 +1,16 @@
+#!/bin/sh
+
+printf 'checking what type of `ls` this environment has... '
+
+DOTFILES_LSTYPE=unknown
+if ls --color -d . >/dev/null 2>&1; then
+    DOTFILES_LSTYPE=GNU
+elif ls -G -d . >/dev/null 2>&1; then
+    DOTFILES_LSTYPE=BSD
+fi
+
+cat <<EOT >> ~/.dotfiles.conf
+DOTFILES_LSTYPE=$DOTFILES_LSTYPE
+EOT
+
+printf '%s\n' $DOTFILES_LSTYPE

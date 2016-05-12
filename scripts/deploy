@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ -f ~/.dotfiles.conf ]; then
+	set -a
+	. ~/.dotfiles.conf
+	set +a
+else
+	echo 'ERROR: ~/.dotfiles.conf is missing. Please run `make configure` before proceeding.'
+	exit 1
+fi
+
+basedir=`dirname $0`
+template_dir="$DOTFILES_ROOT/templates"
+for file in `cd $template_dir && find . -type f`; do
+	file=`echo $file | cut -c 3- -`
+
+	printf "deploying the template of ~/%s... " $file
+
+	template=$template_dir/$file
+	target=~/$file
+	cat $template | $basedir/lib/deploy-template $target
+
+	printf "done\n"
+done

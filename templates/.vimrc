@@ -1,11 +1,10 @@
-let g:dotfiles_runtime_dir =
-\   fnamemodify(resolve(expand('<sfile>:p')), ':h') . '/../vim'
+" BEGIN DOTFILES TEMPLATE CODE
+let g:dotfiles_runtime_dir = '%DOTFILES_ROOT%/vim'
 let &runtimepath .= ',' . g:dotfiles_runtime_dir
 
 if has('vim_starting')
     set nocompatible
-    let &runtimepath .=
-\	    ',' . g:dotfiles_runtime_dir . '/bundle/neobundle.vim'
+    let &runtimepath .= ',' . g:dotfiles_runtime_dir . '/bundle/neobundle.vim'
 endif
 
 filetype off
@@ -26,3 +25,4 @@ filetype plugin indent on
 runtime! vimrc.d/**/*.vim
 
 NeoBundleCheck
+" END DOTFILES TEMPLATE CODE

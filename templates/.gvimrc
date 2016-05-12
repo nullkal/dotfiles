@@ -1,0 +1,3 @@
+" BEGIN DOTFILES TEMPLATE CODE
+runtime! gvimrc.d/**/*.vim
+" END DOTFILES TEMPLATE CODE
