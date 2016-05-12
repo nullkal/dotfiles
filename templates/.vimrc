@@ -22,7 +22,7 @@ endif
 call neobundle#end()
 
 filetype plugin indent on
-runtime! vimrc.d/**/*.vim
+runtime! vimrc.d/**/*
 
 NeoBundleCheck
 " END DOTFILES TEMPLATE CODE
