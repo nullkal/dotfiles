@@ -8,9 +8,6 @@ if ls --color -d . >/dev/null 2>&1; then
 elif ls -G -d . >/dev/null 2>&1; then
     DOTFILES_LSTYPE=BSD
 fi
-
-cat <<EOT >> ~/.dotfiles.conf
-DOTFILES_LSTYPE=$DOTFILES_LSTYPE
-EOT
+echo "DOTFILES_LSTYPE=$DOTFILES_LSTYPE" >> ~/.dotfiles.conf
 
 printf '%s\n' $DOTFILES_LSTYPE
