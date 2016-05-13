@@ -3,6 +3,10 @@ repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 
 [[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+
+[[plugins]]
 repo = 'nginx.vim'
 on_ft = ['nginx']
 
