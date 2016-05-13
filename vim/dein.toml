@@ -42,9 +42,6 @@ repo = 'Shougo/neocomplete.vim'
 repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
