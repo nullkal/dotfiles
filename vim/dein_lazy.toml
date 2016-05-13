@@ -67,4 +67,4 @@ on_ft = ['html']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html']
+on_ft = ['html', 'css', 'sass', 'scss']
