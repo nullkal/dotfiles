@@ -1,6 +1,6 @@
 let g:user_emmet_settings = {
 \	'variables': {
-\		'lang': '',
+\		'lang': 'ja',
 \		'locale': 'ja-JP',
 \	}
 \}
