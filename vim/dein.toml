@@ -17,6 +17,9 @@ hook_post_update = '''
 '''
 
 [[plugins]]
+repo = 'mattn/webapi-vim'
+
+[[plugins]]
 repo = 'embear/vim-localvimrc'
 
 [[plugins]]
@@ -31,9 +34,6 @@ repo = 'Shougo/context_filetype.vim'
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
-
-[[plugins]]
-repo = 'kien/ctrlp.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
@@ -75,6 +75,9 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'jistr/vim-nerdtree-tabs'
 depends = ['nerdtree']
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'

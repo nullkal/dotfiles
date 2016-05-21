@@ -3,6 +3,10 @@ repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 
 [[plugins]]
+repo = 'mattn/gist-vim'
+on_cmd = 'Gist'
+
+[[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 
@@ -19,7 +23,7 @@ repo  = 'tpope/vim-endwise'
 on_ft = ['ruby']
 
 [[plugins]]
-repo = 'tpope/vim-rails'
+repo = 'ruby-matchit'
 on_ft = ['ruby']
 
 [[plugins]]
@@ -27,8 +31,13 @@ repo = 'tpope/vim-bundler'
 on_ft = ['ruby']
 
 [[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby']
+
+[[plugins]]
 repo = 'basyura/unite-rails'
 on_ft = ['ruby']
+
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
@@ -46,11 +55,12 @@ repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
 
 [[plugins]]
-repo = 'jiangmiao/simple-javascript-indenter'
+repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
 [[plugins]]
-repo = 'jelera/vim-javascript-syntax'
+repo = 'ternjs/tern_for_vim'
+build = 'npm install --silent'
 on_ft = ['javascript']
 
 [[plugins]]
@@ -59,7 +69,11 @@ on_ft = ['typescript']
 
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
-on_ft = ['css', 'scss']
+on_ft = ['css', 'scss', 'less']
+
+[[plugins]]
+repo = 'groenewege/vim-less'
+on_ft = ['less']
 
 [[plugins]]
 repo = 'othree/html5.vim'
@@ -67,4 +81,4 @@ on_ft = ['html']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html', 'css', 'sass', 'scss']
+on_ft = ['html', 'css', 'scss']

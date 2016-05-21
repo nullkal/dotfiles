@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cat <<EOT > ./.tern-project
+{
+	"libs": [
+		"browser",
+		"ecma5"
+	]
+}
+EOT
