@@ -84,3 +84,6 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
