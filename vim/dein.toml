@@ -64,7 +64,7 @@ repo = 'jiangmiao/auto-pairs'
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
-repo = 'sudo.vim'
+repo = 'vim-scripts/sudo.vim'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'

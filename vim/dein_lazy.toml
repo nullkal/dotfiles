@@ -11,7 +11,7 @@ repo = 'lervag/vimtex'
 on_ft = ['tex']
 
 [[plugins]]
-repo = 'nginx.vim'
+repo = 'vim-scripts/nginx.vim'
 on_ft = ['nginx']
 
 [[plugins]]
@@ -23,7 +23,7 @@ repo  = 'tpope/vim-endwise'
 on_ft = ['ruby']
 
 [[plugins]]
-repo = 'ruby-matchit'
+repo = 'vim-scripts/ruby-matchit'
 on_ft = ['ruby']
 
 [[plugins]]
