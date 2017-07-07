@@ -1,14 +1,40 @@
 [[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
 repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+depends = ['neomru.vim']
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim'
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+
+[[plugins]]
+repo = 'https://github.com/noahfrederick/vim-skeleton.git'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
