@@ -1,0 +1,10 @@
+Host lyra.nullkal.jp
+  Port 8122
+
+Host ns.nullkal.jp
+  Port 8122
+
+Host twilight.nullkal.jp
+  Port 8122
+
+Host *
