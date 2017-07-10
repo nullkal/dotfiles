@@ -32,6 +32,9 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'vim-scripts/sudo.vim'
 
 [[plugins]]
+repo = 'AndrewRadev/switch.vim'
+
+[[plugins]]
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
@@ -46,6 +49,9 @@ repo = 'w0ng/vim-hybrid'
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'thinca/vim-ref'
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
