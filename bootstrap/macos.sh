@@ -4,7 +4,7 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install softwares
-brew install rbenv nvm tmux zsh git neovim
+brew install rbenv nvm tmux reattach-to-user-namespace zsh git neovim
 
 # Write ~/.zshrc
 cat <<'ZSHRC' > ~/.zshrc
