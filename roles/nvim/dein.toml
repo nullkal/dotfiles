@@ -57,6 +57,9 @@ repo = 'thinca/vim-ref'
 repo = 'airblade/vim-rooter'
 
 [[plugins]]
+repo = 'kana/vim-submode'
+
+[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
