@@ -1,4 +1,7 @@
 [[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
@@ -6,7 +9,6 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-depends = ['neomru.vim']
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -21,7 +23,22 @@ repo = 'itchyny/lightline.vim'
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'vim-scripts/sudo.vim'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
 repo = 'Lokaltog/vim-easymotion'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
@@ -34,7 +51,10 @@ depends = ['context_filetype.vim']
 repo = 'airblade/vim-rooter'
 
 [[plugins]]
-repo = 'https://github.com/noahfrederick/vim-skeleton.git'
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'noahfrederick/vim-skeleton'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
