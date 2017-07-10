@@ -6,9 +6,9 @@ def write_fact(f, name, value)
 end
 
 describe "Registering fact file's path"
-env[:fact_file] = File.join(env[:target_dir], '.dotfiles.conf')
+@fact_file = File.join(@target_dir, '.dotfiles.conf')
 
-open(env[:fact_file], 'w') do |f|
+open(@fact_file, 'w') do |f|
   describe 'Gathering the fact: the version of `ls`'
   def detect_ls_type
     if system('ls --color -d . >/dev/null 2>&1')

@@ -3,10 +3,10 @@
 require 'fileutils'
 
 describe 'Ensuring the directory ~/.config/nvim exists'
-FileUtils.mkdir_p(File.join(env[:target_dir], '.config', 'nvim'))
+FileUtils.mkdir_p(File.join(@target_dir, '.config', 'nvim'))
 
 describe 'Inserting the loading script into .init.vim'
-block_in_file File.join(env[:target_dir], '.config', 'nvim', 'init.vim'),
+block_in_file File.join(@target_dir, '.config', 'nvim', 'init.vim'),
   marker: ->(mark) { "\" #{mark} DOTFILES MANAGED BLOCK"  },
   block: <<INIT_VIM
 let g:dotfiles_runtimepath = '#{__dir__}'

@@ -4,10 +4,8 @@ class Dotfiles
   class EvalContext
     DEFAULT_MARKER = ->(mark) { "# #{mark} DOTFILES MANAGED BLOCK" }
 
-    attr_reader :env
-
     def initialize(env:)
-      @env = env
+      env.each { |k, v| eval "@#{k} = v" }
     end
 
     def describe(message)
