@@ -1,10 +1,22 @@
 [[plugins]]
+repo = 'mattn/gist-vim'
+on_cmd = 'Gist'
+
+[[plugins]]
 repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 
 [[plugins]]
-repo = 'mattn/gist-vim'
-on_cmd = 'Gist'
+repo = 'majutsushi/tagbar'
+on_cmd = 'Tagbar'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+on_cmd = 'NERDTree'
+
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+on_cmd = 'NERDTree'
 
 [[plugins]]
 repo = 'fatih/vim-go'
