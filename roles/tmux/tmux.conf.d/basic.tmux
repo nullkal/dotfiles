@@ -11,5 +11,13 @@ tmux set -g base-index 1
 
 # Clipboad sharing in Mac OS X
 if [ `uname` = "Darwin" ]; then
-    tmux set -g default-command "reattach-to-user-namespace -l zsh"
+  tmux set -g default-command "reattach-to-user-namespace -l zsh"
+
+  tmux bind-key -t vi-copy v begin-selection
+  tmux bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+  tmux unbind -t vi-copy Enter
+  tmux bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+
+  tmux bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 fi
