@@ -52,6 +52,10 @@ repo = 'tpope/vim-markdown'
 on_ft = ['markdown']
 
 [[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_ft = ['markdown']
+
+[[plugins]]
 repo = 'vim-scripts/ruby-matchit'
 on_ft = ['ruby']
 
