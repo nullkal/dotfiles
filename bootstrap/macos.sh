@@ -15,7 +15,8 @@ export NVM_DIR="$HOME/.nvm"
 
 ZSHRC
 
-/opt/local/bin/zsh <<ZSHELL
+/usr/local/bin/zsh - <<ZSHELL
+. ~/.zshrc
 rbenv install 2.4.1
 rbenv global 2.4.1
 nvm install --lts
