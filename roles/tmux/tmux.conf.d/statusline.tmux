@@ -1,3 +1,5 @@
+tmux set-option -g status-interval 1
+
 tmux set-option -g status-bg "colour238"
 tmux set-option -g status-fg "colour255"
 
