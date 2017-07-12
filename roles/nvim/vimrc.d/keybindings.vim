@@ -1,4 +1,5 @@
-nmap <C-n> :NERDTreeTabsToggle<CR>:TagbarToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-m> :TagbarToggle<CR>
 
 " Window/tab keybindings from http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
 nnoremap s <Nop>

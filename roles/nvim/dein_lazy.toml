@@ -15,10 +15,6 @@ repo = 'scrooloose/nerdtree'
 on_cmd = 'NERDTree'
 
 [[plugins]]
-repo = 'jistr/vim-nerdtree-tabs'
-on_cmd = 'NERDTree'
-
-[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
 
