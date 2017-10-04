@@ -1,2 +1,2 @@
-# frozen_string_literals: true
+# frozen_string_literal: true
 
