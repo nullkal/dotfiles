@@ -80,6 +80,10 @@ repo = 'derekwyatt/vim-scala'
 on_ft = ['scala']
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
 repo = 'hashivim/vim-terraform'
 on_ft = ['terraform']
 
