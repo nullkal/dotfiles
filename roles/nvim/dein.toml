@@ -1,5 +1,5 @@
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
+repo = 'cohama/lexima.vim'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
