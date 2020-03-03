@@ -1,0 +1,7 @@
+---
+- name: Insert configuration block in ~/.tmux.conf
+  blockinfile:
+    path: ~/.tmux.conf
+    create: yes
+    block: |
+      run-shell 'for f in `find {{ role_path }}/local_files/tmux.conf.d -name "*.tmux" -type f`; do . $f; done'

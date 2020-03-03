@@ -1,0 +1,12 @@
+---
+- name: Create ~/.ssh if it does not exist
+  file:
+    path: ~/.ssh
+    state: directory
+    mode: '0700'
+
+- name: Insert configuration block in ~/.ssh/config
+  blockinfile:
+    path: ~/.ssh/config
+    create: yes
+    block: "{{ lookup('file', 'files/config') }}"

@@ -1,0 +1,12 @@
+---
+- name: Insert configuration block in ~/.gitconfig
+  blockinfile:
+    path: ~/.gitconfig
+    create: yes
+    block: "{{ lookup('file', 'files/gitconfig') }}"
+
+- name: Insert configuration block in ~/.gitignore
+  blockinfile:
+    path: ~/.gitignore
+    create: yes
+    block: "{{ lookup('file', 'files/gitignore') }}"

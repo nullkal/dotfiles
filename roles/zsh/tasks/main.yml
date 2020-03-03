@@ -1,0 +1,15 @@
+---
+- name: Insert configuration block in ~/.zshenv
+  blockinfile:
+    path: ~/.zshenv
+    create: yes
+    block: |
+      export PATH={{ playbook_dir }}/bin:$PATH
+      for f in `find {{ role_path }}/local_files/zshenv.d -name '*.zsh' -type f`; do . $f; done
+
+- name: Insert configuration block in ~/.zshrc
+  blockinfile:
+    path: ~/.zshrc
+    create: yes
+    block: |
+      for f in `find {{ role_path }}/local_files/zshrc.d -name '*.zsh' -type f`; do . $f; done
