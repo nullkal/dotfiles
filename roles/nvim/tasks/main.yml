@@ -3,6 +3,7 @@
   blockinfile:
     path: ~/.config/nvim/init.vim
     create: yes
+    marker: "\" {mark} ANSIBLE MANAGED BLOCK"
     block: |
       let g:dotfiles_runtimepath = '{{ role_path }}/local_files'
       let &runtimepath .= ',' . g:dotfiles_runtimepath
