@@ -1,9 +1,26 @@
 ---
+- name: "Check ls-type - gnuls"
+  command:
+    cmd: ls --color -d .
+  register: check_ls_type_gnuls
+
+- name: "Check ls-type - bsdls"
+  command:
+    cmd: ls -G -d .
+  register: check_ls_type_bsdls
+  when: check_ls_type_gnuls.rc != 0
+
 - name: Insert configuration block in ~/.zshenv
   blockinfile:
     path: ~/.zshenv
     create: yes
     block: |
+      {% if not check_ls_type_gnuls is skipped and check_ls_type_gnuls.rc == 0 %}
+      export LS_TYPE_GNULS=1
+      {% endif %}
+      {% if not check_ls_type_bsdls is skipped and check_ls_type_bsdls.rc == 0 %}
+      export LS_TYPE_BSDLS=1
+      {% endif %}
       export PATH={{ playbook_dir }}/bin:$PATH
       for f in `find {{ role_path }}/local_files/zshenv.d -name '*.zsh' -type f`; do . $f; done
 
