@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if type explorer.exe > /dev/null 2>&1; then
+    explorer.exe $1
+elif type /usr/bin/open > /dev/null 2>&1; then
+    /usr/bin/open $1
+elif type xdg-open > /dev/null 2>&1; then
+    xdg-open $1
+fi
+
