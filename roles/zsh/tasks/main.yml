@@ -3,12 +3,14 @@
   command:
     cmd: ls --color -d .
   register: check_ls_type_gnuls
+  ignore_errors: yes
 
 - name: "Check ls-type - bsdls"
   command:
     cmd: ls -G -d .
   register: check_ls_type_bsdls
   when: check_ls_type_gnuls.rc != 0
+  ignore_errors: yes
 
 - name: Insert configuration block in ~/.zshenv
   blockinfile:
