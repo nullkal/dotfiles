@@ -28,4 +28,6 @@ else
     exit 1
 fi
 
+"$SCRIPT_DIR/setup-priv"
+
 ansible-playbook site.yml --ask-become-pass

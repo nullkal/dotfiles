@@ -12,7 +12,6 @@ nullkal/dotfiles: ぬるかるの個人用CLI環境設定リポジトリ
 $ git clone https://github.com/nullkal/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 $ ./scripts/bootstrap
-$ ./scripts/setup-priv
 ```
 
 ## 使い方
@@ -20,7 +19,5 @@ $ ./scripts/setup-priv
 ### 環境を最新にする
 
 ```cmd
-$ git pull
-$ ./scripts/update-priv
-$ ansible-playbook site.yml --ask-become-pass
+$ ./scripts/update
 ```
