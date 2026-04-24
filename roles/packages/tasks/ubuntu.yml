@@ -1,0 +1,12 @@
+---
+- name: Install packages with apt for Ubuntu
+  apt:
+    name:
+      - git
+      - curl
+      - tmux
+      - zsh
+      - neovim
+    state: present
+    update_cache: yes
+  become: yes

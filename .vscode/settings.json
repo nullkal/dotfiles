@@ -1,0 +1,13 @@
+{
+  "chat.tools.terminal.ignoreDefaultAutoApproveRules": true,
+  "chat.tools.terminal.autoApprove": {
+    "/^ansible-playbook\\s+--syntax-check\\s+site\\.yml$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^sh\\s+-n\\s+bootstrap\\.sh$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

@@ -1,12 +1,26 @@
-nullkal's dotfiles
+nullkal/dotfiles: ぬるかるの個人用CLI環境設定リポジトリ
 ----
 
-This dotfiles uses Ansible to setup.
+このリポジトリには、nullkal(ぬるかる)が個人的に使用しているCLI環境の設定スクリプトが置かれています。
+設定スクリプトの管理にはAnsibleを使用しています。
 
-## Usage
+このリポジトリの内容は自由に参考にして構いません。
+
+## セットアップ方法
 
 ```cmd
 $ git clone https://github.com/nullkal/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
-$ ansible-playbook site.yml
+$ ./bootstrap.sh
 ```
+
+## 使い方
+
+### 環境を最新にする
+
+```cmd
+$ git pull
+$ ansible-playbook site.yml --ask-become-pass
+```
+
+`./bootstrap.sh` 実行時も同様に、`ansible-playbook` の実行部分で昇格用パスワード入力が求められます。

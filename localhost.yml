@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   roles:
+    - packages
     - zsh
     - tmux
     - nvim
