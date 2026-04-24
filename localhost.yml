@@ -7,3 +7,12 @@
     - nvim
     - git
     - ssh
+  post_tasks:
+    - name: Collect private roles
+      set_fact:
+        dotfiles_private_role_tasks: "{{ lookup('fileglob', playbook_dir ~ '/dotfiles-priv/roles/*/tasks/main.yml', wantlist=True) | sort }}"
+
+    - name: Load private roles if available
+      include_role:
+        name: "{{ item | dirname | dirname | basename }}"
+      loop: "{{ dotfiles_private_role_tasks }}"

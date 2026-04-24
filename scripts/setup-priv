@@ -1,0 +1,38 @@
+#!/bin/sh
+set -eu
+
+GITHUB_USER="nullkal"
+REPO_URL="https://github.com/$GITHUB_USER/dotfiles-priv.git"
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+ROOT_DIR=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+PRIV_DIR="$ROOT_DIR/dotfiles-priv"
+
+if [ -d "$PRIV_DIR/.git" ]; then
+    echo "dotfiles-priv already exists. Pulling latest changes..."
+    if ! git -C "$PRIV_DIR" pull --ff-only; then
+        echo ""
+        echo "Error: Failed to update dotfiles-priv."
+        echo "You may not have access permission to: $REPO_URL"
+        echo "If you are not an allowed collaborator, this is expected."
+        echo "You can continue using public dotfiles without dotfiles-priv."
+        exit 1
+    fi
+    exit 0
+fi
+
+if [ -e "$PRIV_DIR" ]; then
+    echo "Error: $PRIV_DIR exists but is not a git repository"
+    exit 1
+fi
+
+if ! git clone "$REPO_URL" "$PRIV_DIR"; then
+    echo ""
+    echo "Error: Failed to clone dotfiles-priv."
+    echo "You may not have access permission to: $REPO_URL"
+    echo "If you are not an allowed collaborator, this is expected."
+    echo "You can continue using public dotfiles without dotfiles-priv."
+    exit 1
+fi
+
+echo "Cloned: $PRIV_DIR"

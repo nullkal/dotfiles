@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+ROOT_DIR=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+PRIV_DIR="$ROOT_DIR/dotfiles-priv"
+
+if [ ! -d "$PRIV_DIR/.git" ]; then
+    echo "dotfiles-priv not found: $PRIV_DIR"
+    echo "Run ./scripts/setup-priv first."
+    exit 1
+fi
+
+if ! git -C "$PRIV_DIR" pull --ff-only; then
+    echo ""
+    echo "Error: Failed to update dotfiles-priv."
+    echo "You may not have access permission to this private repository."
+    echo "If you are not an allowed collaborator, this is expected."
+    echo "You can continue using public dotfiles without dotfiles-priv."
+    exit 1
+fi

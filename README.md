@@ -11,7 +11,8 @@ nullkal/dotfiles: ぬるかるの個人用CLI環境設定リポジトリ
 ```cmd
 $ git clone https://github.com/nullkal/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
-$ ./bootstrap.sh
+$ ./scripts/bootstrap
+$ ./scripts/setup-priv
 ```
 
 ## 使い方
@@ -20,7 +21,6 @@ $ ./bootstrap.sh
 
 ```cmd
 $ git pull
+$ ./scripts/update-priv
 $ ansible-playbook site.yml --ask-become-pass
 ```
-
-`./bootstrap.sh` 実行時も同様に、`ansible-playbook` の実行部分で昇格用パスワード入力が求められます。
