@@ -8,6 +8,8 @@
     "/^sh\\s+-n\\s+bootstrap\\.sh$/": {
       "approve": true,
       "matchCommandLine": true
-    }
+    },
+    "cd": true,
+    "git status": true
   }
 }
