@@ -9,4 +9,5 @@
   blockinfile:
     path: ~/.ssh/config
     create: yes
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: dotfiles-public-ssh-config"
     block: "{{ lookup('file', 'files/config') }}"

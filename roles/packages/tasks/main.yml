@@ -1,14 +1,14 @@
 ---
 - name: Check package task file for current distribution
   stat:
-    path: "{{ role_path }}/tasks/{{ ansible_distribution | lower }}.yml"
+    path: "{{ role_path }}/tasks/{{ ansible_facts['distribution'] | lower }}.yml"
   register: dotfiles_packages_distribution_task
 
 - name: Fail when distribution is unsupported
   fail:
-    msg: "Unsupported distribution: {{ ansible_distribution }} (expected task file: roles/packages/tasks/{{ ansible_distribution | lower }}.yml)"
+    msg: "Unsupported distribution: {{ ansible_facts['distribution'] }} (expected task file: roles/packages/tasks/{{ ansible_facts['distribution'] | lower }}.yml)"
   when: not dotfiles_packages_distribution_task.stat.exists
 
 - name: Install packages for current distribution
-  include_tasks: "{{ ansible_distribution | lower }}.yml"
+  include_tasks: "{{ ansible_facts['distribution'] | lower }}.yml"
   when: dotfiles_packages_distribution_task.stat.exists

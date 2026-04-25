@@ -1,5 +1,9 @@
 ---
 - hosts: localhost
+  vars:
+    private_roles:
+      - ssh_private
+
   roles:
     - packages
     - zsh
@@ -7,12 +11,16 @@
     - nvim
     - git
     - ssh
-  post_tasks:
-    - name: Collect private roles
-      set_fact:
-        dotfiles_private_role_tasks: "{{ lookup('fileglob', playbook_dir ~ '/dotfiles-priv/roles/*/tasks/main.yml', wantlist=True) | sort }}"
 
-    - name: Load private roles if available
-      include_role:
-        name: "{{ item | dirname | dirname | basename }}"
-      loop: "{{ dotfiles_private_role_tasks }}"
+  pre_tasks:
+    - name: Check if dotfiles-priv exists
+      ansible.builtin.stat:
+        path: "{{ playbook_dir }}/dotfiles-priv"
+      register: dotfiles_priv_dir
+
+  tasks:
+    - name: Include private roles from dotfiles-priv when available
+      ansible.builtin.include_role:
+        name: "{{ item }}"
+      loop: "{{ private_roles }}"
+      when: dotfiles_priv_dir.stat.isdir | default(false)
