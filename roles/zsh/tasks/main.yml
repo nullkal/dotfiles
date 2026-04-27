@@ -32,3 +32,14 @@
     create: yes
     block: |
       for f in `find {{ role_path }}/local_files/zshrc.d -name '*.zsh' -type f`; do . $f; done
+
+- name: Find zsh executable
+  shell: command -v zsh
+  register: zsh_executable
+  changed_when: false
+
+- name: Set default shell to zsh
+  user:
+    name: "{{ ansible_facts['user_id'] }}"
+    shell: "{{ zsh_executable.stdout }}"
+  become: yes
