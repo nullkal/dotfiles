@@ -1,12 +1,27 @@
 ---
+- name: Ensure add-apt-repository command is available
+  apt:
+    name: software-properties-common
+    state: present
+    update_cache: yes
+  become: yes
+
 - name: Install packages with apt for Ubuntu
   apt:
     name:
+      - build-essential
       - git
       - curl
       - tmux
       - zsh
-      - neovim
+      - snapd
     state: present
     update_cache: yes
+  become: yes
+
+- name: Install Neovim with snap
+  community.general.snap:
+    name: nvim
+    classic: yes
+    state: present
   become: yes

@@ -8,4 +8,5 @@ cd "$ROOT_DIR"
 
 git pull --ff-only
 "$SCRIPT_DIR/update-priv"
+ansible-galaxy collection install -r requirements.yml
 ansible-playbook site.yml --ask-become-pass
