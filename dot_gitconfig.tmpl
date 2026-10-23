@@ -2,8 +2,8 @@
   excludesfile = ~/.gitignore
 
 [user]
-  email = {{ .name }}
-  name = {{ .email }}
+  email = {{ .email }}
+  name = {{ .name }}
 
 {{ if eq .chezmoi.os "linux" -}}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
