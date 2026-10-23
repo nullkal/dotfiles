@@ -87,6 +87,18 @@ RPROMPT="%{$PC%}[%{${fg[red]}%}%*%{$PC%}]%{${reset_color}%}"
 setopt transient_rprompt
 
 
+# open command
+{{ if eq .chezmoi.os "linux" -}}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+  alias open=explorer.exe
+{{ else -}}
+  alias open=xdg-open
+{{   end -}}
+{{ else if .chezmoi.os "darwin" -}}
+  alias open=/usr/bin/open
+{{ end }}
+
+
 # nvim alias
 if type "nvim" > /dev/null; then
   alias vi="nvim"
