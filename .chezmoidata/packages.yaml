@@ -1,0 +1,11 @@
+packages:
+  ubuntu:
+    apt_repos:
+#      - ppa:neovim-ppa/stable
+    apt:
+      - build-essential
+      - git
+      - curl
+      - tmux
+      - zsh
+      - neovim

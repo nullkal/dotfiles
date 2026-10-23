@@ -1,0 +1,4 @@
+ignore-scripts=true
+min-release-age=2
+audit=true
+
