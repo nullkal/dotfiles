@@ -106,6 +106,14 @@ if type "nvim" > /dev/null; then
 fi
 
 
+{{ if eq .chezmoi.os "linux" -}}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+  alias ssh='ssh.exe'
+  alias ssh-add='ssh-add.exe'
+{{ end }}
+{{ end }}
+
+
 # path
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
