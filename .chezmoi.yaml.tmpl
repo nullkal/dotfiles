@@ -1,5 +1,5 @@
-{{ $name :=  promptStringOnce . "name" "What is your GitHub user name" -}}
-{{ $email := promptStringOnce . "email" "What is your email address" -}}
+{{ $name :=  promptStringOnce . "name" "GitHub user name" -}}
+{{ $email := promptStringOnce . "email" "Email address" -}}
 
 data:
   name: {{ $name | toYaml }}
