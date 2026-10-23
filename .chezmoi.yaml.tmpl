@@ -1,0 +1,7 @@
+{{ $name := or (env "GIT_NAME") (promptStringOnce . "name" "What is your GitHub user name") -}}
+{{ $email := or (env "GIT_EMAIL") (promptStringOnce . "email" "What is your email address") -}}
+
+data:
+  name: {{ $name | toYaml }}
+  email: {{ $email | toYaml }}
+

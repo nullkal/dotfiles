@@ -1,0 +1,13 @@
+[core]
+  excludesfile = ~/.gitignore
+
+[user]
+  email = {{ .name }}
+  name = {{ .email }}
+
+{{ if eq .chezmoi.os "linux" -}}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+[credential]
+  helper = /mnt/c/Program\\ Files/Git/ucrt64/bin/git-credential-manager.exe
+{{   end -}}
+{{ end }}
