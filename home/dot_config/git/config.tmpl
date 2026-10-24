@@ -2,6 +2,9 @@
   email = {{ .email }}
   name = {{ .name }}
 
+[init]
+  defaultBranch = main
+
 {{ if eq .chezmoi.os "linux" -}}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
 [credential]
