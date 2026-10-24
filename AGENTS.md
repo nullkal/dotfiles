@@ -9,8 +9,14 @@
 このリポジトリは chezmoi で個人用の dotfiles を管理します。`.chezmoiroot` で指定した `home/` 内の `dot_*` はホームディレクトリのドットファイルに対応します。例えば、`home/dot_config/git/config.tmpl` の配置先は `~/.config/git/config` です。`.tmpl` ファイルには chezmoi の Go テンプレートを使用します。
 
 - `home/dot_config/nvim/`: LazyVim 設定。起動時の設定は `lua/config/`、プラグイン定義は `lua/plugins/` に配置します。
+- `home/dot_zshrc`: `~/.config/zsh/zshrc/*.zsh` をファイル名順に自動で読み込みます。用途別の設定は `home/dot_config/zsh/zshrc/` に置き、番号付きのファイル名で順序を指定します。
+- `home/dot_config/sheldon/plugins.toml`: Zsh プラグインの一覧と読み込み順を管理します。環境・履歴・補完設定には Zim モジュールの既定値を使います。
+- `home/.chezmoiremove`: 廃止した設定ファイルを配置先から削除します。
+- `home/.chezmoi.yaml.tmpl`: chezmoi の設定テンプレートです。Linux・macOS ではソース状態の読み込み前に sudo 認証を行うフックを設定します。変更を既存環境へ反映するには `chezmoi init` が必要です。
 - `home/.chezmoidata/packages.yaml`: インストール用テンプレートで参照する Ubuntu のパッケージとリポジトリの一覧です。
 - `home/run_onchange_ubuntu-install-packages.sh.tmpl`: Ubuntu 専用のパッケージインストールフックです。
+- `home/run_onchange_after_10-install-mise.sh.tmpl`: Linux・macOS 共通の mise 導入フックです。
+- `home/run_onchange_after_20-install-sheldon.sh.tmpl`: mise 導入後に、mise 管理の Rust/Cargo で Sheldon をビルドします（Linux・macOS）。
 - `home/.chezmoiexternal.toml`: tmux プラグインマネージャーなど、外部依存の定義です。
 - `.chezmoiroot`: chezmoi の管理対象の起点として `home/` を指定します。
 - `README.md` と `AGENTS.md` はリポジトリルートに置き、配置対象には含めません。
@@ -24,7 +30,7 @@ chezmoi をインストールし、このディレクトリをソースとして
 - `chezmoi status`: 管理対象ファイルと配置先の差分状況を確認します。
 - `chezmoi diff`: 適用前に、テンプレート展開後の差分を確認します。
 - `chezmoi apply --dry-run --verbose`: 実際に適用せず、実行予定の処理を確認します。
-- `chezmoi apply`: ローカル環境に変更を適用します。Ubuntu のフックは管理者権限でパッケージのインストールとアップグレードを行うため、事前に内容を確認してください。
+- `chezmoi apply`: ローカル環境に変更を適用します。Ubuntu のフックは管理者権限でリポジトリの追加と指定パッケージのインストールを行うため、事前に内容を確認してください。
 - `stylua --check home/dot_config/nvim`: 同梱の設定に従って Lua の書式を検証します。
 
 ## コーディング規約と命名

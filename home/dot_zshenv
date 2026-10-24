@@ -1,0 +1,2 @@
+# Let zimfw/completion initialize completion instead of Ubuntu's /etc/zsh/zshrc.
+skip_global_compinit=1

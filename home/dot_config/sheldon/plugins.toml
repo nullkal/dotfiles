@@ -1,0 +1,9 @@
+shell = "zsh"
+
+[plugins.zim-environment]
+github = "zimfw/environment"
+use = ["init.zsh"]
+
+[plugins.zim-completion]
+github = "zimfw/completion"
+use = ["init.zsh"]

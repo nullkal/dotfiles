@@ -1,0 +1,5 @@
+# Load regular .zsh files in filename order; an empty directory is allowed.
+for zshrc_file in "$HOME"/.config/zsh/zshrc/*.zsh(N.); do
+  source "$zshrc_file"
+done
+unset zshrc_file
