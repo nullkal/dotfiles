@@ -16,6 +16,8 @@
 - `home/.chezmoidata/packages.yaml`: インストール用テンプレートで参照する Ubuntu のパッケージとリポジトリの一覧です。
 - `home/run_onchange_ubuntu-install-packages.sh.tmpl`: Ubuntu 専用のパッケージインストールフックです。
 - `home/run_onchange_after_10-install-mise.sh.tmpl`: Linux・macOS 共通の mise 導入フックです。
+- `home/dot_config/mise/conf.d/fzf.toml`: mise で管理する fzf のバージョン指定です。
+- `home/run_onchange_after_30-install-fzf.sh.tmpl`: Linux・macOS 共通の fzf 導入フックです。
 - `home/run_onchange_after_20-install-sheldon.sh.tmpl`: mise 導入後に、mise 管理の Rust/Cargo で Sheldon をビルドします（Linux・macOS）。
 - `home/.chezmoiexternal.toml`: tmux プラグインマネージャーなど、外部依存の定義です。
 - `.chezmoiroot`: chezmoi の管理対象の起点として `home/` を指定します。

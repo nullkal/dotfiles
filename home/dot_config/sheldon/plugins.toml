@@ -11,3 +11,7 @@ use = ["init.zsh"]
 [plugins.zim-completion]
 github = "zimfw/completion"
 use = ["init.zsh"]
+
+[plugins.zim-input]
+github = "zimfw/input"
+use = ["init.zsh"]
