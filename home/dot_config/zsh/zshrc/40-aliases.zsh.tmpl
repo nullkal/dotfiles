@@ -1,25 +1,24 @@
-# open command
+# Open files with the OS default application.
 {{ if eq .chezmoi.os "linux" -}}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-  alias open=explorer.exe
-{{ else -}}
-  alias open=xdg-open
+alias open=explorer.exe
+{{   else -}}
+alias open=xdg-open
 {{   end -}}
 {{ else if .chezmoi.os "darwin" -}}
-  alias open=/usr/bin/open
+alias open=/usr/bin/open
 {{ end }}
 
-
-# nvim alias
-if type "nvim" > /dev/null; then
+# Use Neovim when available.
+if (( $+commands[nvim] )); then
   alias vi="nvim"
   alias vim="nvim"
 fi
 
-
 {{ if eq .chezmoi.os "linux" -}}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-  alias ssh='ssh.exe'
-  alias ssh-add='ssh-add.exe'
-{{ end }}
+# Aliases for WSL2
+alias ssh='ssh.exe'
+alias ssh-add='ssh-add.exe'
+{{   end -}}
 {{ end }}
