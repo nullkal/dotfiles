@@ -6,13 +6,14 @@
 
 ## プロジェクト構成
 
-このリポジトリは chezmoi で個人用の dotfiles を管理します。ルート直下の `dot_*` はホームディレクトリのドットファイルに対応します。例えば、`dot_gitconfig` の配置先は `~/.gitconfig` です。`.tmpl` ファイルには chezmoi の Go テンプレートを使用します。
+このリポジトリは chezmoi で個人用の dotfiles を管理します。`.chezmoiroot` で指定した `home/` 内の `dot_*` はホームディレクトリのドットファイルに対応します。例えば、`home/dot_gitconfig.tmpl` の配置先は `~/.gitconfig` です。`.tmpl` ファイルには chezmoi の Go テンプレートを使用します。
 
-- `dot_config/nvim/`: LazyVim 設定。起動時の設定は `lua/config/`、プラグイン定義は `lua/plugins/` に配置します。
-- `.chezmoidata/packages.yaml`: インストール用テンプレートで参照する Ubuntu のパッケージとリポジトリの一覧です。
-- `run_onchange_ubuntu-install-packages.sh.tmpl`: Ubuntu 専用のパッケージインストールフックです。
-- `.chezmoiexternal.toml`: tmux プラグインマネージャーなど、外部依存の定義です。
-- `.chezmoiignore`: 配置対象から除外するファイルの指定です。
+- `home/dot_config/nvim/`: LazyVim 設定。起動時の設定は `lua/config/`、プラグイン定義は `lua/plugins/` に配置します。
+- `home/.chezmoidata/packages.yaml`: インストール用テンプレートで参照する Ubuntu のパッケージとリポジトリの一覧です。
+- `home/run_onchange_ubuntu-install-packages.sh.tmpl`: Ubuntu 専用のパッケージインストールフックです。
+- `home/.chezmoiexternal.toml`: tmux プラグインマネージャーなど、外部依存の定義です。
+- `.chezmoiroot`: chezmoi の管理対象の起点として `home/` を指定します。
+- `README.md` と `AGENTS.md` はリポジトリルートに置き、配置対象には含めません。
 
 アプリケーションのビルド、専用テストスイート、アセット用ディレクトリはありません。古いコミットには Ansible 構成が含まれますが、変更は現在の chezmoi 構成に合わせてください。
 
@@ -24,11 +25,11 @@ chezmoi をインストールし、このディレクトリをソースとして
 - `chezmoi diff`: 適用前に、テンプレート展開後の差分を確認します。
 - `chezmoi apply --dry-run --verbose`: 実際に適用せず、実行予定の処理を確認します。
 - `chezmoi apply`: ローカル環境に変更を適用します。Ubuntu のフックは管理者権限でパッケージのインストールとアップグレードを行うため、事前に内容を確認してください。
-- `stylua --check dot_config/nvim`: 同梱の設定に従って Lua の書式を検証します。
+- `stylua --check home/dot_config/nvim`: 同梱の設定に従って Lua の書式を検証します。
 
 ## コーディング規約と命名
 
-chezmoi の命名プレフィックスと `.tmpl` 拡張子を維持してください。OS 固有の処理にはテンプレートの条件分岐を使用します。Lua と YAML のインデントはスペース 2 個です。Lua は `dot_config/nvim/stylua.toml` に従い、行幅の上限を 120 桁とします。Neovim の設定は該当する設定モジュールへ、プラグイン定義は `lua/plugins/` へ追加してください。
+chezmoi の命名プレフィックスと `.tmpl` 拡張子を維持してください。OS 固有の処理にはテンプレートの条件分岐を使用します。Lua と YAML のインデントはスペース 2 個です。Lua は `home/dot_config/nvim/stylua.toml` に従い、行幅の上限を 120 桁とします。Neovim の設定は該当する設定モジュールへ、プラグイン定義は `lua/plugins/` へ追加してください。
 
 ## テスト方針
 
