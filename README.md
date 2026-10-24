@@ -47,3 +47,5 @@ mise exec rust@stable -- cargo install sheldon --locked --root "$HOME/.local"
 ```
 
 プラグイン更新後は `exec zsh` で Zsh を再起動してください。OS のパッケージ更新は別途行ってください。
+
+chezmoi・mise の Zsh 補完は、初回起動時に `${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions` へ生成します。以降は配置済みの補完を `fpath` と Zim の `compinit` で読み込みます。実行ファイルの場所・更新時刻などが変わった場合は、次の Zsh 起動時に再生成します。コマンド更新後は `exec zsh` で反映してください。
