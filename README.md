@@ -38,8 +38,8 @@ chezmoi 自体の設定テンプレートを変更した場合は、`chezmoi ini
 # Zsh プラグイン
 sheldon lock --update
 
-# fzf
-mise upgrade fzf
+# fzf・Starship
+mise upgrade fzf starship
 
 # Sheldon
 mise install rust@stable

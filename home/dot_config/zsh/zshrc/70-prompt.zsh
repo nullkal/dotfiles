@@ -1,14 +1,6 @@
-# prompt
-autoload -U colors; colors
-
-if [[ -z $PROMPT_COLOR ]]; then
-    export PROMPT_COLOR="yellow"
-fi
-PC="${fg[$PROMPT_COLOR]}"
-
-PROMPT="%{$PC%}[%n@%m %c]%#%{${reset_color}%} "
-PROMPT2="%{$PC%}%B%_>%b%{${reset_color}%} "
-SPROMPT="%{$PC%}%r is correct? [n, y, a, e]:%{${reset_color}%} "
-RPROMPT="%{$PC%}[%{${fg[red]}%}%*%{$PC%}]%{${reset_color}%}"
-
+# Preserve Zsh's normal/root prompt character for Starship.
+export STARSHIP_PROMPT_SYMBOL="${(%):-%#}"
+eval "$(starship init zsh)"
+PROMPT2='%F{yellow}%B%_>%b%f '
+SPROMPT='%F{yellow}%r is correct? [n, y, a, e]:%f '
 setopt transient_rprompt

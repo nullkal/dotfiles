@@ -17,6 +17,9 @@
 - `home/run_onchange_ubuntu-install-packages.sh.tmpl`: Ubuntu 専用のパッケージインストールフックです。
 - `home/run_onchange_after_10-install-mise.sh.tmpl`: Linux・macOS 共通の mise 導入フックです。
 - `home/dot_config/mise/conf.d/fzf.toml`: mise で管理する fzf のバージョン指定です。
+- `home/dot_config/mise/conf.d/starship.toml`: mise で管理する Starship のバージョン指定です。
+- `home/dot_config/starship.toml`: 1行の左プロンプトと右側の時刻表示を設定します。
+- `home/run_onchange_after_40-install-starship.sh.tmpl`: Linux・macOS 共通の Starship 導入フックです。
 - `home/run_onchange_after_30-install-fzf.sh.tmpl`: Linux・macOS 共通の fzf 導入フックです。
 - `home/run_onchange_after_20-install-sheldon.sh.tmpl`: mise 導入後に、mise 管理の Rust/Cargo で Sheldon をビルドします（Linux・macOS）。
 - `home/.chezmoiexternal.toml`: tmux プラグインマネージャーなど、外部依存の定義です。
