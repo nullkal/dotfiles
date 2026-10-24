@@ -2,8 +2,15 @@
 #!/bin/sh
 set -eu
 
+{{ if eq .chezmoi.os "darwin" -}}
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+{{ end -}}
 # The 10-install-mise after-script runs before this script.
 export PATH="$HOME/.local/bin:$PATH"
+
+if command -v sheldon >/dev/null 2>&1; then
+  exit 0
+fi
 
 mise install rust@stable
 mise exec rust@stable -- cargo install sheldon --locked --root "$HOME/.local"

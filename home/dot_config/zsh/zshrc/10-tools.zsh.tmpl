@@ -1,0 +1,13 @@
+{{ if eq .chezmoi.os "darwin" -}}
+# Homebrew Settings
+{{   if eq .chezmoi.arch "arm64" -}}
+brew_prefix=/opt/homebrew
+{{   else if eq .chezmoi.arch "amd64" -}}
+brew_prefix=/usr/local
+{{   end -}}
+eval "$("$brew_prefix/bin/brew" shellenv)"
+unset brew_prefix
+{{ end -}}
+
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+eval "$(mise activate zsh)"

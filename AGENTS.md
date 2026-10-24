@@ -13,7 +13,7 @@
 - `home/dot_config/sheldon/plugins.toml`: Zsh プラグインの一覧と読み込み順を管理します。環境・履歴・ユーティリティ・補完設定には Zim モジュールの既定値を使います。
 - `home/.chezmoiremove`: 廃止した設定ファイルを配置先から削除します。
 - `home/.chezmoi.yaml.tmpl`: chezmoi の設定テンプレートです。Linux・macOS ではソース状態の読み込み前に sudo 認証を行うフックを設定します。変更を既存環境へ反映するには `chezmoi init` が必要です。
-- `home/.chezmoidata/packages.yaml`: インストール用テンプレートで参照する Ubuntu のパッケージとリポジトリの一覧です。
+- `home/.chezmoidata/packages.yaml`: Ubuntu のパッケージ・リポジトリと macOS の Homebrew パッケージの一覧です。
 - `home/run_onchange_ubuntu-install-packages.sh.tmpl`: Ubuntu 専用のパッケージインストールフックです。
 - `home/run_onchange_after_10-install-mise.sh.tmpl`: Linux・macOS 共通の mise 導入フックです。
 - `home/dot_config/mise/conf.d/fzf.toml`: mise で管理する fzf のバージョン指定です。
@@ -22,6 +22,8 @@
 - `home/run_onchange_after_40-install-starship.sh.tmpl`: Linux・macOS 共通の Starship 導入フックです。
 - `home/run_onchange_after_30-install-fzf.sh.tmpl`: Linux・macOS 共通の fzf 導入フックです。
 - `home/run_onchange_after_20-install-sheldon.sh.tmpl`: mise 導入後に、mise 管理の Rust/Cargo で Sheldon をビルドします（Linux・macOS）。
+- `home/run_onchange_darwin-install-packages.sh.tmpl`: `packages.darwin.brew` から Homebrew Bundle の入力を生成し、一覧の変更時に不足分を導入します。Brewfile は配置しません。
+- `home/dot_config/zsh/zshrc/10-tools.zsh.tmpl`: macOS の Homebrew 環境初期化と、各 OS 共通の PATH・mise 初期化を行います。
 - `home/.chezmoiexternal.toml`: tmux プラグインマネージャーなど、外部依存の定義です。
 - `home/run_onchange_after_50-install-tmux-plugins.sh.tmpl`: tmux 設定の配置と TPM の取得後、初回および設定変更時にプラグインをインストールします（Linux・macOS）。
 - `.chezmoiroot`: chezmoi の管理対象の起点として `home/` を指定します。

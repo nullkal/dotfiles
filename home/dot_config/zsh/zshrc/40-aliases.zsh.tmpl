@@ -5,7 +5,7 @@ alias open=explorer.exe
 {{   else -}}
 alias open=xdg-open
 {{   end -}}
-{{ else if .chezmoi.os "darwin" -}}
+{{ else if eq .chezmoi.os "darwin" -}}
 alias open=/usr/bin/open
 {{ end }}
 

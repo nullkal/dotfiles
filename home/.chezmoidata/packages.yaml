@@ -10,3 +10,12 @@ packages:
       - tmux
       - zsh
       - neovim
+  darwin:
+    brew:
+      - git
+      - curl
+      - tmux
+      - zsh
+      - neovim
+      # Required by Sheldon's libssh2 dependency when building with Cargo.
+      - openssl@3

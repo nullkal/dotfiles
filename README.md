@@ -4,7 +4,7 @@
 
 ## セットアップ
 
-Linux・macOS 向けです。Ubuntu では必要なパッケージを自動でインストールします。他の Linux では Git・curl・Zsh・C/C++ ビルドツール・pkg-config・OpenSSL 開発ライブラリを、macOS では Command Line Tools と Zsh を事前に用意してください。
+Linux・macOS 向けです。Ubuntu では apt、macOS では Homebrew Bundle で必要なパッケージを自動インストールします。macOS では Command Line Tools（`xcode-select --install`）を事前に用意してください。Homebrew がなければセットアップ中に導入します。他の Linux では Git・curl・Zsh・tmux・Neovim・C/C++ ビルドツール・pkg-config・OpenSSL 開発ライブラリを事前に用意してください。
 
 ```sh
 sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply nullkal

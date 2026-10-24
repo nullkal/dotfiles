@@ -1,0 +1,23 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+set -eu
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+if ! command -v brew >/dev/null 2>&1; then
+  installer=$(mktemp)
+  trap 'rm -f "$installer"' EXIT
+  trap 'exit 1' HUP INT TERM
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh -o "$installer"
+  NONINTERACTIVE=1 /bin/bash "$installer"
+fi
+
+brew_bundle() {
+  brew bundle "$@" --no-upgrade --file=- <<'BREWFILE'
+{{ range .packages.darwin.brew -}}
+brew {{ . | quote }}
+{{ end -}}
+BREWFILE
+}
+
+brew_bundle check || brew_bundle install
+{{ end -}}
