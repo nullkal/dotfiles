@@ -1,0 +1,10 @@
+{{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
+#!/bin/sh
+set -eu
+
+# The 10-install-mise after-script runs before this script.
+export PATH="$HOME/.local/bin:$PATH"
+
+mise install rust@stable
+mise exec rust@stable -- cargo install sheldon --locked --root "$HOME/.local"
+{{ end -}}

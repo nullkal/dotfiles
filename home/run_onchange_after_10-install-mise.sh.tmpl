@@ -1,0 +1,17 @@
+{{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
+#!/bin/sh
+set -eu
+
+export PATH="$HOME/.local/bin:$PATH"
+
+if command -v mise >/dev/null 2>&1; then
+  exit 0
+fi
+
+installer=$(mktemp)
+trap 'rm -f "$installer"' EXIT
+trap 'exit 1' HUP INT TERM
+curl -fsSL https://mise.run -o "$installer"
+MISE_INSTALL_PATH="$HOME/.local/bin/mise" sh "$installer"
+"$HOME/.local/bin/mise" --version
+{{ end -}}

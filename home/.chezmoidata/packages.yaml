@@ -1,9 +1,10 @@
 packages:
   ubuntu:
-    apt_repos:
-#      - ppa:neovim-ppa/stable
+    apt_repos: []
     apt:
       - build-essential
+      - pkg-config
+      - libssl-dev
       - git
       - curl
       - tmux

@@ -1,18 +1,22 @@
+{{ if eq .chezmoi.os "linux" -}}
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 #!/bin/sh
+set -eu
 
-sudo apt update
-sudo apt upgrade -y
+sudo apt-get update
 
-sudo apt install -y software-properties-common
-
+{{ if .packages.ubuntu.apt_repos -}}
+sudo apt-get install -y software-properties-common
 {{ range .packages.ubuntu.apt_repos -}}
-    sudo add-apt-repository -y {{ . | quote }}
+sudo add-apt-repository --yes --no-update {{ . | quote }}
+{{ end -}}
+sudo apt-get update
 {{ end -}}
 
-sudo apt update
-sudo apt install -y {{ range .packages.ubuntu.apt -}}{{ . | quote }} {{ end }}
+{{ if .packages.ubuntu.apt -}}
+sudo apt-get install -y {{ range .packages.ubuntu.apt -}}{{ . | quote }} {{ end }}
+{{ end -}}
 
-curl -fsSL https://mise.run | sh
+{{ end -}}
 {{ end -}}
 

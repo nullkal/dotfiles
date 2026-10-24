@@ -5,3 +5,15 @@ data:
   name: {{ $name | toYaml }}
   email: {{ $email | toYaml }}
 
+{{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
+hooks:
+  read-source-state:
+    pre:
+      command: sh
+      args:
+        - -c
+        - |
+          case "$CHEZMOI_COMMAND" in
+            apply|init|update) exec sudo -v ;;
+          esac
+{{ end -}}
