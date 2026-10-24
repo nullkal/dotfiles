@@ -15,3 +15,23 @@ use = ["init.zsh"]
 [plugins.zim-input]
 github = "zimfw/input"
 use = ["init.zsh"]
+
+[plugins.fzf]
+inline = '''
+eval "$(fzf --zsh)"
+zstyle ':completion:*' menu no
+zstyle ':completion:*:descriptions' format '[%d]'
+'''
+
+# Load after compinit, before plugins that wrap ZLE widgets.
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+use = ["fzf-tab.plugin.zsh"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["zsh-autosuggestions.zsh"]
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+use = ["fast-syntax-highlighting.plugin.zsh"]
