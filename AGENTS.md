@@ -17,8 +17,10 @@
 - `home/run_onchange_after_10-install-mise.sh.tmpl`: Linux・macOS 共通の mise 導入フックです。
 - `home/dot_config/mise/conf.d/fzf.toml`: mise で管理する fzf のバージョン指定です。
 - `home/dot_config/mise/conf.d/starship.toml`: mise で管理する Starship のバージョン指定です。
+- `home/dot_config/mise/conf.d/gh.toml`: mise で管理する GitHub CLI のバージョン指定です。
 - `home/dot_config/starship.toml`: 1行の左プロンプトと右側の時刻表示を設定します。
 - `home/run_onchange_after_40-install-starship.sh.tmpl`: Linux・macOS 共通の Starship 導入フックです。
+- `home/run_onchange_after_45-install-gh.sh.tmpl`: Linux・macOS 共通の GitHub CLI 導入フックです。
 - `home/run_onchange_after_30-install-fzf.sh.tmpl`: Linux・macOS 共通の fzf 導入フックです。
 - `home/run_onchange_after_20-install-sheldon.sh.tmpl`: mise 導入後に、mise 管理の Rust/Cargo で Sheldon をビルドします（Linux・macOS）。
 - `home/run_onchange_darwin-install-packages.sh.tmpl`: `packages.darwin.brew` から Homebrew Bundle の入力を生成し、一覧の変更時に不足分を導入します。Brewfile は配置しません。

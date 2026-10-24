@@ -3,8 +3,8 @@
 () {
   emulate -L zsh
 
-  # Commands that provide `completion zsh` output.
-  local -a completion_tools=(chezmoi mise)
+  # Commands that provide Zsh completion scripts.
+  local -a completion_tools=(chezmoi mise gh)
 
   local completion_dir=${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions
   fpath=("$completion_dir" $fpath)
@@ -43,7 +43,10 @@
     if {
       print -r -- "#compdef $tool"
       print -r -- "$executable_signature"
-      "$executable" completion zsh
+      case $tool in
+        gh) "$executable" completion --shell zsh ;;
+        *) "$executable" completion zsh ;;
+      esac
     } > "$temporary_file"; then
       command mv -f -- "$temporary_file" "$completion_file"
     else

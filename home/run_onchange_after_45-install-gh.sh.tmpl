@@ -1,0 +1,8 @@
+{{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
+#!/bin/sh
+set -eu
+
+# GitHub CLI configuration: {{ include "dot_config/mise/conf.d/gh.toml" | sha256sum }}
+export PATH="$HOME/.local/bin:$PATH"
+mise install gh
+{{ end -}}
