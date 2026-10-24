@@ -10,7 +10,7 @@
 
 - `home/dot_config/nvim/`: LazyVim 設定。起動時の設定は `lua/config/`、プラグイン定義は `lua/plugins/` に配置します。
 - `home/dot_zshrc`: `~/.config/zsh/zshrc/*.zsh` をファイル名順に自動で読み込みます。用途別の設定は `home/dot_config/zsh/zshrc/` に置き、番号付きのファイル名で順序を指定します。
-- `home/dot_config/sheldon/plugins.toml`: Zsh プラグインの一覧と読み込み順を管理します。環境・履歴・補完設定には Zim モジュールの既定値を使います。
+- `home/dot_config/sheldon/plugins.toml`: Zsh プラグインの一覧と読み込み順を管理します。環境・履歴・ユーティリティ・補完設定には Zim モジュールの既定値を使います。
 - `home/.chezmoiremove`: 廃止した設定ファイルを配置先から削除します。
 - `home/.chezmoi.yaml.tmpl`: chezmoi の設定テンプレートです。Linux・macOS ではソース状態の読み込み前に sudo 認証を行うフックを設定します。変更を既存環境へ反映するには `chezmoi init` が必要です。
 - `home/.chezmoidata/packages.yaml`: インストール用テンプレートで参照する Ubuntu のパッケージとリポジトリの一覧です。

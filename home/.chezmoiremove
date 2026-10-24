@@ -1,2 +1,3 @@
+.config/zsh/zshrc/20-ls.zsh
 .config/zsh/zshrc/30-completion.zsh
 .config/zsh/zshrc/40-history.zsh

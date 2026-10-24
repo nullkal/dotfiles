@@ -21,8 +21,7 @@ $ sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply nullkal
 `~/.zshrc` は `~/.config/zsh/zshrc/` 直下の通常ファイル `*.zsh` をファイル名順で自動的に読み込みます。番号で読み込み順を指定し、設定を追加するときはこのフォルダに配置します。フォルダが空・未作成でもエラーにはなりません。
 
 - `10-tools.zsh`: PATH・mise の初期化
-- `20-ls.zsh`: ls の色・エイリアス（OS ごとにテンプレートで展開）
-- `30-plugins.zsh`: Sheldon 経由で環境・履歴・補完設定を読み込み
+- `30-plugins.zsh`: Sheldon 経由で環境・履歴・ユーティリティ・補完設定を読み込み
 - `50-keybindings.zsh`: キーマップ・履歴検索のキー割り当て
 - `60-aliases.zsh`: OS 別のコマンド・Neovim のエイリアス
 - `70-prompt.zsh`: プロンプト表示
@@ -31,9 +30,11 @@ $ sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply nullkal
 
 `~/.zshenv` で `skip_global_compinit=1` を設定し、Ubuntu の `/etc/zsh/zshrc` による補完初期化を無効化します。補完の初期化は Zim に任せます。設定の再読み込みには `source ~/.zshrc` ではなく `exec zsh` を使ってください。
 
-`~/.config/sheldon/plugins.toml` で `zimfw/environment` → `zimfw/completion` の順に読み込みます。両モジュールの既定値を採用し、履歴は `~/.zhistory` に保存します（メモリ内 20,000 件、保存 10,000 件）。独自の履歴設定と `history-all` は廃止します。旧 `~/.zsh_history` は自動で移行・削除しません。
+`~/.config/sheldon/plugins.toml` で `zimfw/environment` → `zimfw/utility` → `zimfw/completion` の順に読み込みます。各モジュールの既定値を採用し、履歴は `~/.zhistory` に保存します（メモリ内 20,000 件、保存 10,000 件）。独自の履歴設定と `history-all` は廃止します。旧 `~/.zsh_history` は自動で移行・削除しません。
 
-モジュールの既定値には、自動 cd、`>` による既存ファイルの上書き禁止、大文字・小文字を区別しない glob なども含まれます。旧 `30-completion.zsh`・`40-history.zsh` は `.chezmoiremove` で配置先から削除し、設定の二重読み込みを防ぎます。
+モジュールの既定値には、自動 cd、`>` による既存ファイルの上書き禁止、大文字・小文字を区別しない glob なども含まれます。旧 `20-ls.zsh`・`30-completion.zsh`・`40-history.zsh` は `.chezmoiremove` で配置先から削除し、設定の二重読み込みを防ぎます。
+
+ls の色・GNU/BSD の判定は `zimfw/utility` に任せます。GNU ls ではディレクトリを先に表示し、macOS の BSD ls では `CLICOLOR`・`LSCOLORS` を設定します。モジュールは grep・less の色やユーティリティ用エイリアスも設定し、lsd があれば ls を lsd に切り替えます。
 
 ## mise・Sheldon の自動インストール（Linux・macOS）
 

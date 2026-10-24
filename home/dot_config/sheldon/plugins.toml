@@ -4,6 +4,10 @@ shell = "zsh"
 github = "zimfw/environment"
 use = ["init.zsh"]
 
+[plugins.zim-utility]
+github = "zimfw/utility"
+use = ["init.zsh"]
+
 [plugins.zim-completion]
 github = "zimfw/completion"
 use = ["init.zsh"]
