@@ -6,7 +6,7 @@
 
 ## プロジェクト構成
 
-このリポジトリは chezmoi で個人用の dotfiles を管理します。`.chezmoiroot` で指定した `home/` 内の `dot_*` はホームディレクトリのドットファイルに対応します。例えば、`home/dot_gitconfig.tmpl` の配置先は `~/.gitconfig` です。`.tmpl` ファイルには chezmoi の Go テンプレートを使用します。
+このリポジトリは chezmoi で個人用の dotfiles を管理します。`.chezmoiroot` で指定した `home/` 内の `dot_*` はホームディレクトリのドットファイルに対応します。例えば、`home/dot_config/git/config.tmpl` の配置先は `~/.config/git/config` です。`.tmpl` ファイルには chezmoi の Go テンプレートを使用します。
 
 - `home/dot_config/nvim/`: LazyVim 設定。起動時の設定は `lua/config/`、プラグイン定義は `lua/plugins/` に配置します。
 - `home/.chezmoidata/packages.yaml`: インストール用テンプレートで参照する Ubuntu のパッケージとリポジトリの一覧です。
