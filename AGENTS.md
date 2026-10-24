@@ -23,6 +23,7 @@
 - `home/run_onchange_after_30-install-fzf.sh.tmpl`: Linux・macOS 共通の fzf 導入フックです。
 - `home/run_onchange_after_20-install-sheldon.sh.tmpl`: mise 導入後に、mise 管理の Rust/Cargo で Sheldon をビルドします（Linux・macOS）。
 - `home/.chezmoiexternal.toml`: tmux プラグインマネージャーなど、外部依存の定義です。
+- `home/run_onchange_after_50-install-tmux-plugins.sh.tmpl`: tmux 設定の配置と TPM の取得後、初回および設定変更時にプラグインをインストールします（Linux・macOS）。
 - `.chezmoiroot`: chezmoi の管理対象の起点として `home/` を指定します。
 - `README.md` と `AGENTS.md` はリポジトリルートに置き、配置対象には含めません。
 
